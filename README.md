@@ -1,4 +1,4 @@
-# flutter_issure
+# flutter_issues
 
 A new Flutter project.
 
