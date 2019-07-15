@@ -28,4 +28,4 @@ Doctor summary (to see all details, run flutter doctor -v):
 ```
 
 ## crash gif
-![Imgur](ios_crash.2019-07-15 15_02_41.gif)
+![Imgur](https://github.com/voiddog/flutter_issues_demo/blob/master/lib/demo/ios_crash_1.7.8/ios_crash.2019-07-15%2015_02_41.gif)
