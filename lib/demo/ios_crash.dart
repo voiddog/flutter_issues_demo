@@ -49,17 +49,24 @@ class _IOSCrashExampleState extends State<IOSCrashExample> {
 
   List<Widget> _buildChildren(BuildContext context) {
     return [
-      Text('If crash doesn\'t appear, please exit and open page'),
       for (int i = 0; i < 10; ++i)
-        _FollowFeedsMoreTextItem(
-          content: "经典四口味尝鲜装\n玲珑心意小礼盒，第二件半价！！\n限时时间：截止至15日0点，快来抢购吧",
-          tag: "第二件半价",
+        LayoutBuilder(
+          builder: (context, constarints) {
+            return _FollowFeedsMoreTextItem(
+              content: "经典四口味尝鲜装\n玲珑心意小礼盒，第二件半价！！\n限时时间：截止至15日0点，快来抢购吧",
+              tag: "第二件半价",
+            );
+          },
         ),
       for (int i = 0; i < 10; ++i)
-        _FollowFeedsMoreTextItem(
-          content:
-              "夏日黄昏光晕法式少女\n\n【MINICYBER】太阳女神搭配  https://k.weidian.com/g0PDl=l9",
-          tag: "心机耳饰",
+        LayoutBuilder(
+          builder: (context, constraints) {
+            return _FollowFeedsMoreTextItem(
+              content:
+                  "夏日黄昏光晕法式少女\n\n【MINICYBER】太阳女神搭配  https://k.weidian.com/g0PDl=l9",
+              tag: "心机耳饰",
+            );
+          },
         ),
     ];
   }
@@ -87,25 +94,8 @@ class _FollowFeedsMoreTextItemState extends State<_FollowFeedsMoreTextItem> {
   List<InlineSpan> _buildText(BuildContext context) {
     List<InlineSpan> result = [];
     String content = widget.content?.trim();
-    String tag = widget.tag?.trim();
 
     //置顶标展示
-    result.add(WidgetSpan(
-      child: Image.network(
-          "https://si.geilicdn.com/img-24be0000016bdb2e924e0a21167e-unadjust_78_38.png",
-          width: 30,
-          height: 18),
-    ));
-    result.add(TextSpan(text: " "));
-
-    if (tag?.isNotEmpty == true) {
-      result.add(TextSpan(
-          text: "#$tag# ",
-          style: TextStyle(
-            color: Color(0xFF199AED),
-            fontSize: 14,
-          )));
-    }
     if (content?.isNotEmpty == true) {
       RegExp regExp = RegExp(
           "((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?");
@@ -140,22 +130,7 @@ class _FollowFeedsMoreTextItemState extends State<_FollowFeedsMoreTextItem> {
               onTap: () {},
             ),
           ));
-          result.add(TextSpan(
-              text: widget.linkUrlText,
-              style: TextStyle(
-                color: Color(0xFF199AED),
-                fontSize: 14,
-              )));
           index = m.end;
-        }
-
-        if (content.length > index) {
-          result.add(TextSpan(
-              text: content.substring(index, content.length),
-              style: TextStyle(
-                color: Color(0xFF4A4A4A),
-                fontSize: 14,
-              )));
         }
       }
     }
