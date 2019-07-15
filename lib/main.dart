@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'demo/widget_lifecycle.dart';
 import 'demo/ink_issues.dart';
+import 'demo/ios_crash.dart';
 
 void main() {
   var mapRoutes = {
@@ -9,6 +10,9 @@ void main() {
     },
     "ink_issues": (BuildContext context) {
       return InkIssuesDemo();
+    },
+    "ios_carsh": (BuildContext context) {
+      return IOSCrashExample();
     }
   };
   runApp(MaterialApp(
