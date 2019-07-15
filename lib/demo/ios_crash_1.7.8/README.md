@@ -28,4 +28,4 @@ Doctor summary (to see all details, run flutter doctor -v):
 ```
 
 ## crash gif
-![Imgur](https://i.imgur.com/MiNaZhq.gifv)
+![Imgur](ios_crash.2019-07-15 15_02_41.gif)
