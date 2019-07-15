@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'demo/widget_lifecycle.dart';
 import 'demo/ink_issues.dart';
-import 'demo/ios_crash.dart';
+import 'demo/ios_crash_1.7.8/ios_crash.dart';
 
 void main() {
   var mapRoutes = {
