@@ -124,7 +124,7 @@ class _FollowFeedsMoreTextItemState extends State<_FollowFeedsMoreTextItem> {
           result.add(WidgetSpan(
             child: GestureDetector(
               child: Image.network(
-                  "https://si.geilicdn.com/img-79e20000016bdafc17d50a217205-unadjust_25_26.png",
+                  "https://i.imgur.com/NvcObW8.png",
                   width: 14,
                   height: 18),
               onTap: () {},
