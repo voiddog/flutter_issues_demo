@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'demo/widget_lifecycle.dart';
 import 'demo/ink_issues.dart';
 import 'demo/ios_crash_1.7.8/ios_crash.dart';
+import 'demo/nested_scroll_view/nested_scroll_view_issure.dart';
 
 void main() {
   var mapRoutes = {
@@ -13,6 +14,9 @@ void main() {
     },
     "ios_carsh": (BuildContext context) {
       return IOSCrashExample();
+    },
+    "nested_scroll_issure": (BuildContext context) {
+      return NestedScrollIssure();
     }
   };
   runApp(MaterialApp(
