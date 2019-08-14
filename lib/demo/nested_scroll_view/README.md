@@ -1,4 +1,4 @@
-# Use WidgetSpan crash on iOS example
+# Floating point precision error makes restore position failure in NestedScrollView
 
 ## flutter doctor
 ```bash
