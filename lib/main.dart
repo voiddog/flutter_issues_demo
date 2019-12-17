@@ -3,6 +3,7 @@ import 'demo/widget_lifecycle.dart';
 import 'demo/ink_issues.dart';
 import 'demo/ios_crash_1.7.8/ios_crash.dart';
 import 'demo/nested_scroll_view/nested_scroll_view_issure.dart';
+import 'demo/anroid_input_lost/android_input_lost.dart';
 
 void main() {
   var mapRoutes = {
@@ -17,6 +18,9 @@ void main() {
     },
     "nested_scroll_issure": (BuildContext context) {
       return NestedScrollIssure();
+    },
+    "android_input_lost": (BuildContext context) {
+      return AndroidInputLostDemo();
     }
   };
   runApp(MaterialApp(
