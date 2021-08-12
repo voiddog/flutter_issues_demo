@@ -3,7 +3,8 @@ import 'demo/widget_lifecycle.dart';
 import 'demo/ink_issues.dart';
 import 'demo/ios_crash_1.7.8/ios_crash.dart';
 import 'demo/nested_scroll_view/nested_scroll_view_issure.dart';
-import 'demo/anroid_input_lost/android_input_lost.dart';
+import 'demo/android_input_lost/android_input_lost.dart';
+import 'demo/route_leak/route_leak.dart';
 
 void main() {
   var mapRoutes = {
@@ -21,11 +22,16 @@ void main() {
     },
     "android_input_lost": (BuildContext context) {
       return AndroidInputLostDemo();
+    },
+    "route_leak": (BuildContext context) {
+      return RouteLeakPage();
     }
   };
   runApp(MaterialApp(
     routes: mapRoutes,
-    home: Home(mapRoutes: mapRoutes,),
+    home: Home(
+      mapRoutes: mapRoutes,
+    ),
   ));
 }
 
@@ -55,10 +61,12 @@ class _HomeState extends State<Home> {
             itemCount: routeList.length,
             itemBuilder: (context, index) {
               var routeName = routeList[index];
-              return RaisedButton(onPressed: (){
-                Navigator.of(context).pushNamed(routeName);
-              }, child: Text(routeName),);
-            })
-    );
+              return RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(routeName);
+                },
+                child: Text(routeName),
+              );
+            }));
   }
 }
